@@ -23,13 +23,6 @@ resource "aws_s3_bucket" "main" {
   )
 }
 
-resource "aws_s3_bucket_policy" "main" {
-  for_each = var.s3_config
-
-  bucket = aws_s3_bucket.main[each.key].id
-  policy = each.value.policy
-}
-
 resource "aws_s3_bucket_versioning" "main" {
   for_each = var.s3_config
 

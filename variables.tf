@@ -5,7 +5,6 @@ variable "s3_config" {
     acl              = optional(string, "private")
     versioning       = optional(string, "Disabled")
     object_ownership = optional(string, "BucketOwnerPreferred")
-    policy           = string
   }))
   default = {}
 }
